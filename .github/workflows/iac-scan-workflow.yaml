@@ -1,4 +1,5 @@
 name: iac
+
 on:
   push:
     branches: [ master ]
@@ -6,11 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
+  iac-scan:  # <-- Job ID added here
     runs-on: ubuntu-latest
-steps:
-    - uses: actions/checkout@v3
-    - name: Scan IaC with Tenable Cloud Security
-      uses: tenable/cloud-security-actions/iac/scan@v1
-      with:
-        api-token: ${{ secrets.TENABLE_API_TOKEN }}
-        api-url: https://uk.app.ermetic.com
+    steps:
+      - uses: actions/checkout@v3
+      - name: Scan IaC with Tenable Cloud Security
+        uses: tenable/cloud-security-actions/iac/scan@v1
+        with:
+          api-token: ${{ secrets.TENABLE_API_TOKEN }}
+          api-url: https://etic.com
