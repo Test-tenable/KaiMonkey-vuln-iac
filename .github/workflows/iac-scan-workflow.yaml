@@ -1,5 +1,4 @@
 name: iac
-
 on:
   push:
     branches: [ master ]
@@ -7,11 +6,7 @@ on:
     branches: [ master ]
 
 jobs:
-commit-and-push:
-
-
     runs-on: ubuntu-latest
-
 steps:
     - uses: actions/checkout@v3
     - name: Scan IaC with Tenable Cloud Security
